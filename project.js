@@ -26,16 +26,34 @@ const deposit = () => {
 // Returns:     Number of lines from user to bet
 const getNumberOfLines = () => {
     // Read in number of lines from user and convert to integer
-    const lines = prompt('Enter number of lines you would like to bet: ');
+    const lines = prompt('Enter number of lines you would like to bet (1-3): ');
     const numberOfLines = parseInt(lines);
 
     // Check if value is an integer
     if(isNaN(numberOfLines) || numberOfLines < 1 || numberOfLines > 3){
-        console.log('Invalid number of lines, please choose a number between 1 and 3');
+        console.log('Invalid number of lines, please try again');
         getNumberOfLines();
     }
     return numberOfLines;
 };
 
-const depositAmount = deposit();
+// Function:    Prompts the user to enter the amount they would like to bet per line
+// Returns:     Amount to bet per line
+const getBet = (balance, lines) => {
+    // Read in number of lines from user and convert to integer
+    const bet = prompt('Enter the total bet amount per line: ');
+    const numberBet = parseFloat(bet);
+
+    // Check if value is an integer
+    if(isNaN(numberBet) || numberBet <= 0 || numberBet > (balance / lines)){
+        console.log('Invalid bet amount, please try again');
+        getBet(balance, lines);
+    }
+
+    
+    return numberBet;    
+};
+
+let balance = deposit();
 const numberOfLines = getNumberOfLines();
+const betAmount = getBet(balance, numberOfLines);
