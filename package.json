@@ -1,0 +1,22 @@
+{
+  "name": "slot-machine",
+  "version": "1.0.0",
+  "description": "A slot machine that accepts deposits, then allows betting on a certain number of lines",
+  "main": "project.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jerrvonewing/slot-machine.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jerrvonewing/slot-machine/issues"
+  },
+  "homepage": "https://github.com/jerrvonewing/slot-machine#readme",
+  "dependencies": {
+    "prompt-sync": "^4.2.0"
+  }
+}
